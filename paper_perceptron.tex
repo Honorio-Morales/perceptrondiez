@@ -274,6 +274,16 @@ La solucion se organiza por capas y por lenguaje:
 Cada implementacion mantiene la restriccion de epocas mayor o igual a
 10 y ejecuta seis casos de clasificacion binaria.
 
+La Figura~\ref{fig:arquitectura} resume el flujo general del experimento aplicado en los
+cuatro lenguajes del proyecto.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figuras/fig_arquitectura_perceptron.png}
+\caption{Arquitectura general del flujo de entrenamiento, prediccion y evaluacion del perceptron.}
+\label{fig:arquitectura}
+\end{figure}
+
 \subsection{Conjunto de Datos}
 
 Los casos AND y OR usan tablas de verdad clasicas. Los cuatro casos
@@ -344,6 +354,9 @@ facilitando pruebas repetidas y ajustes de hiperparametros.
 La Tabla~II presenta los resultados oficiales obtenidos en la
 implementacion Python, que se utiliza como referencia del proyecto.
 
+Como evidencia visual de convergencia, la Figura~\ref{fig:ecm_python} muestra las curvas
+de error cuadratico medio para los seis casos en Python.
+
 \begin{table}[t]
 \caption{Resultados de los Seis Casos en Python}
 \label{tab:resultados_python}
@@ -362,6 +375,13 @@ Riesgo Academico & sigmoidal & 50 & 0.9600 & 0.9649 \\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figuras/fig_ecm_python_panel.png}
+\caption{Panel de curvas ECM por caso en la implementacion Python.}
+\label{fig:ecm_python}
+\end{figure}
 
 \subsection{Comparacion Multilenguaje}
 
@@ -386,6 +406,13 @@ Riesgo & 0.9600 & 0.8900 & 0.9000 \\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figuras/fig_accuracy_multilenguaje.png}
+\caption{Comparacion visual de accuracy entre Python, Java y JavaScript.}
+\label{fig:acc_multi}
+\end{figure}
 
 En C\# los seis casos ya estan implementados, pero en el entorno de
 prueba no fue posible ejecutar validacion automatica por ausencia del
@@ -415,6 +442,13 @@ Riesgo & 0.9487 & 0.8043 & 0.9348 & 0.8600 \\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figuras/fig_precision_recall_multilenguaje.png}
+\caption{Precision y recall por caso para Java y JavaScript.}
+\label{fig:pr_multi}
+\end{figure}
 
 \subsection{Analisis por Caso}
 
