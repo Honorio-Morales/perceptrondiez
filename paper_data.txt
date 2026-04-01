@@ -1,0 +1,82 @@
+PAPER DATASET - PROYECTO PERCEPTRON
+Fecha de actualizacion: 2026-04-01
+Repositorio local: /home/honorio/IA/perceptron
+
+1) OBJETIVO GENERAL
+Implementar un perceptron desde cero para clasificacion binaria con funciones de activacion:
+- lineal
+- escalon
+- sigmoidal
+- relu
+- softmax
+- tanh
+Con restriccion de epocas >= 10.
+
+2) ARQUITECTURA ACTUAL
+- Python funcional completo (6 casos): main.py, nucleo/, casos/, resultados/.
+- C# funcional base con 6 casos: implementaciones/csharp/.
+- Java funcional con 6 casos: implementaciones/java/src/.
+- JavaScript funcional con 6 casos: implementaciones/javascript/.
+- Sitio estatico de navegacion: web/index.html, web/styles.css.
+
+3) CASOS DE PRUEBA
+1. AND logico
+2. OR logico
+3. Clasificacion spam/no spam
+4. Prediccion de clima
+5. Deteccion de fraude
+6. Riesgo academico
+
+4) CONFIGURACION DE ENTRENAMIENTO
+AND: activacion escalon, 15 epocas
+OR: activacion escalon, 15 epocas
+Spam: activacion sigmoidal, 50 epocas
+Clima: activacion tanh, 50 epocas
+Fraude: activacion relu, 50 epocas
+Riesgo academico: activacion sigmoidal, 50 epocas
+
+5) RESULTADOS PYTHON (main.py)
+AND Logico: accuracy 1.0000, precision 1.0000
+OR Logico: accuracy 1.0000, precision 1.0000
+Clasificacion de Spam: accuracy 0.8300, precision 0.8333
+Prediccion de Clima: accuracy 0.7000, precision 0.6296
+Deteccion de Fraude: accuracy 0.6200, precision 0.0000
+Riesgo Academico: accuracy 0.9600, precision 0.9649
+
+6) RESULTADOS JAVA (Main.java)
+AND Logico: accuracy 1.0000, precision 1.0000, recall 1.0000
+OR Logico: accuracy 1.0000, precision 1.0000, recall 1.0000
+Clasificacion Spam: accuracy 0.7700, precision 0.6667, recall 0.9545
+Prediccion Clima: accuracy 0.6300, precision 0.5647, recall 1.0000
+Deteccion Fraude: accuracy 0.6600, precision 0.0000, recall 0.0000
+Riesgo Academico: accuracy 0.8900, precision 0.9487, recall 0.8043
+
+7) RESULTADOS JAVASCRIPT (main.js)
+AND Logico: accuracy 1.0000, precision 1.0000, recall 1.0000
+OR Logico: accuracy 1.0000, precision 1.0000, recall 1.0000
+Clasificacion Spam: accuracy 0.8400, precision 0.7681, recall 1.0000
+Prediccion Clima: accuracy 0.6300, precision 0.5843, recall 1.0000
+Deteccion Fraude: accuracy 0.6600, precision 0.0000, recall 0.0000
+Riesgo Academico: accuracy 0.9000, precision 0.9348, recall 0.8600
+
+8) C#
+El codigo C# tiene los 6 casos implementados, pero no se pudo ejecutar en este entorno por ausencia de dotnet CLI.
+
+9) OBSERVACIONES TECNICAS
+- El caso de fraude presenta precision/recal bajos en varios lenguajes por saturacion y separabilidad limitada.
+- Python aun usa rutas absolutas en main.py y generadores de datos; se recomienda migrar a rutas relativas.
+- La activacion softmax esta disponible, pero en perceptron de una neurona se usa aproximacion binaria.
+
+10) COMANDOS DE REPRODUCCION
+Python:
+/home/honorio/IA/perceptron/venv/bin/python main.py
+
+Java:
+javac implementaciones/java/src/*.java
+java -cp implementaciones/java/src Main
+
+JavaScript:
+node implementaciones/javascript/main.js
+
+C# (si dotnet esta instalado):
+dotnet run
